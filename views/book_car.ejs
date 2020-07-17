@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>BOOK NEW CAR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/book_car.css" type="text/css">
+
+    <script src="/js/jquery-1.12.4.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    
+</head>
+<body>
+<h1 align = "center">book car</h1>
+<form method = "post" action = "/view_car/<%= car._id %>/book_now/<%= user._id %>">
+<div class ="container">
+<div><b>User Name</b>  <%= user.visitor_name %></div><br>
+<div><b>Mobile</b>     <%= user.phone%></div><br>
+<div><b>Email</b>      <%= user.username%></div><br>
+
+<div><b>Car Name</b>   <%= car.make%></div><br>
+<div><b>Rent</b>       Rs. <%= car.rent%>/day</div><br>
+
+<div><b>Issue Date</b> <input type="text" name="i_date1" class="select_date"></div><br>
+<div><b>Return Date</b> <input type="text" name="i_date2" class="select_date"></div><br>
+<input type="submit" >
+
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".select_date").datepicker({
+                format: "dd/mm/yyyy",
+                todayHighlight: true,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                autoclose: true,
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date()
+            });
+        });
+
+    </script>
+
+
+
+</body>
+</html>

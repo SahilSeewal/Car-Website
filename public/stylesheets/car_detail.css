@@ -1,0 +1,41 @@
+.pull-right{
+    margin-left:520px;
+    font-size:20px;
+    color:blue;
+}
+img{
+    height:400px;
+    width:650px;
+}
+#b{
+    margin-left:530px;
+    font-size:20px;
+}
+
+#b1{
+    margin-left:530px;
+    margin-top:10px;
+    font-size:20px;
+}
+
+#b2{
+    margin-left:530px;
+    margin-top:10px;
+    font-size:20px;
+}
+.v{
+    color:blue;
+    font-size : 20px;
+    float:left;
+    padding-left:10px; 
+}
+.vl{
+    color:blue;
+    font-size : 20px;
+    float:left;
+    padding-left:750px; 
+}
+
+body{
+    padding-bottom:100px;
+}

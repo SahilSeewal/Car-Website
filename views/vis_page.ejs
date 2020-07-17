@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>ALL CARS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/visitor.css" type="text/css">
+    
+</head>
+<body>
+<div class="container">
+<header class="jumbotron container">
+    <h1>Welcome To Your Profile </h1>
+    
+    <% if(!currentuser){ %> 
+      <span>  <p><a class = "v" href="/visitor_login">Login</a>
+        <p><a class = "v" href="/visitor_register">Signup</a></p></scan>
+    <% }else{ %>
+        <span><p><a class = "vn" href="#">WELCOME <%= currentuser.visitor_name %></a></p>
+        <p><a class = "vl" href="/visitor_logout">Logout</a></p></span>
+    <% } %>
+   </header>
+   <a href="/view_car" id="pull_right" class="btn btn-primary">CAR WORLD</a>   
+<p><b>Name  </b><%= user.visitor_name%></p>
+<p><b>Email Id  </b><%= user.username%></p>
+<p><b>Mobile  </b> <%= user.phone%></p>
+<br><br>
+<h5>BOOKINGS AVAILABLE</h5>
+<table border = "1" cellpadding="20px">
+    <tr>
+       <th>Car Name</th>
+       <th>Car Number</th>
+       <th>Rent</th>
+       <th>Issue Date</th>
+       <th>Return Date</th>
+    </tr>
+    <% user.car_booked.forEach(function(car){ %>
+    <tr>
+       <td><%= car.car_name %></td>
+       <td><%= car.car_num %></td>
+       <td><%= car.rent %> /day</td>
+       <td><%= car.issue_date.toDateString() %></td>
+       <td><%= car.return_date.toDateString() %></td>
+    </tr>
+    <%})%>
+ </table>
+</div>
+</body>
+</html>

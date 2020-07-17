@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>ADD NEW CAR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/car_detail.css" type="text/css">      
+</head>
+<body>
+
+<div class="container">
+<header class="jumbotron container">
+    <% if(!currentuser){ %> 
+        <span>  <p><a class = "v" href="/visitor_login">Login</a>
+          <p><a class = "v" href="/visitor_register">Signup</a></p></scan>
+      <% }else{ %>
+          <span><p><a class = "vl" href="/visitor_logout">Logout</a></p></span>
+      <% } %>
+</header>
+    <div class="row"> 
+                
+                <div class="col-md-9">
+                    <div class="thumbnail">    
+                    <img class="img-responsive" src="<%= car.image %>">
+                    
+                            <div id="dd" class="caption-full">
+                           <h4 class="pull-right">
+                                 Rs. <%=car.rent %>/day    
+                                </h4>
+                                <h4><a><%= car.make %></a></h4>
+                                <a href = "/view_car/<%= car._id %>/book_now"  id = "b" class="btn btn-success">Book Now!</a>
+                                <a href = "/view_car/<%= car._id %>/update"  id = "b1" class="btn btn-warning">Update Car Info</a>
+                                <form action = "/view_car/<%= car._id %>/<%= car.num_of_book %>/delete" method = "post"><input type="submit"  value = "Delete Car" id = "b2" class="btn btn-danger"></form>
+                        
+                                <h5>Description</h5>
+                                <p>Car Number :- <a><%= car.num %></a></p>  
+                                <p>Fuel Type :- <a><%= car.fuel_type %></a></p>
+                                <p>Number of Doors :- <a><%= car.num_of_doors %></a></p>
+                                <p>Aspiration :- <a><%= car.aspiration %></a></p>
+                                <p>Body Style :- <a><%= car.body_style %></a></p>
+                                <p>Driving Wheels :- <a><%= car.drive_wheels %></a></p>
+                                <p>Engine Location :- <a><%= car.engine_location %></a></p>
+                                <p>Number of Bookings :- <a><%= car.num_of_book %></a></p> 
+                                                 
+                                
+                                    
+        </div>
+        </div>
+        </div>
+        </div>
+        </body>
+        </html>

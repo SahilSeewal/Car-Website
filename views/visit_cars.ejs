@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>ALL CARS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/visit_cars.css" type = "text/css">
+</head>
+<body>
+<div class="container">
+<header class="jumbotron container">
+    <h1>Welcome To Cars World!</h1>
+    
+    <% if(!currentuser){ %> 
+      <div>  <p><a class = "v" href="/visitor_login">Login</a>
+        <p><a class = "v" href="/visitor_register">Signup</a></p></div>
+    <% }else{ %>
+        <span><p><a class = "vn" href="#">WELCOME <%= currentuser.visitor_name %></a></p>
+        <p><a class = "vl" href="/visitor_logout">Logout</a></p></span>
+    <% } %>
+   </header>
+<span id="add">
+<form method = "post" action = "/view_car/car_filter">    
+    <span id="s"><p style="font-size:20px; font-weight: 500;">Filter</p>  
+        <div style="font-size:15px; font-weight: 500;">Rent :- <select name = "rent">
+            <option>All</option>
+            <option>< 5000</option>
+            <option>5000 - 10000</option>
+            <option>10000 - 15000</option>
+            <option>> 15000</option>            
+            </select>
+        <input type = "submit" value = "Apply"></div>
+        </span>
+</form>
+<a  href = "/add_car" class="btn btn-secondary">ADD NEW CAR</a>
+        </div>
+    <div class="row" style="margin-top:200px;margin-left:105px;display:flex;flex-wrap:wrap;text-align:center;justify-content: space-between;">    
+            <% cars.forEach(function(car){ %>
+        <div class="col-lg-4 col-md-4 col-sm-6">    
+            <div class="thumbnail">
+            <img src="<%= car.image %>" height = "200"  width = "300">
+            <div class="caption">
+            <h4> <%= car.make %> </h4>
+            </div>
+            <p><a href="/view_car/<%= car._id %>" class="btn btn-primary">More Info</a></p>
+        </div>
+    </div>
+    <% }) %>
+</div>
+</div>
+</body>
+</html>      

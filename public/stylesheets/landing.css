@@ -1,0 +1,77 @@
+body {
+    background-color: #000;
+  }
+#landing-header h1 {
+    color: #fff;
+  }
+  #landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+  }
+  .slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 10s linear infinite; 
+  }
+  .slideshow li:nth-child(1) { 
+    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2018-rolls-royce-phantom-1536152159.png?crop=1.00xw:1.00xh;0,0&resize=480:*g) 
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url(https://live.mrf.io/statics/i/ps/lh3.googleusercontent.com/caIBM4PmsdgQE-LJNWTE_QSa3T2sAH0cFYVp-Yh2QKfB6H3zVxpELYiJkwxc-47BsJIGH1kiuLimcJO92b459w=s750);
+    animation-delay: 2s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url(https://lh3.googleusercontent.com/proxy/ocdwGiuo8VqMDOB2WVhteChO4TduCmOHuv3zYcpqHLyrT5UotBOkVPaSjwClMFNra09kWEIaGJNcr0lz-7WO-n4lkP_ZxE7U67eH9q-QpobJRJvWvX1q_yKl9LFJKPTjm0RaVNHChttGtqGyZwxvtwhwPsKYszv6VSzlUDQVyb-5N_fwB14hg88F);
+    animation-delay: 4s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(https://lh3.googleusercontent.com/proxy/YDsHx-oOOV5Fsy9OmZq7A318XJ8h0gX0m2osRjIFBf2GIR3EooMDuBbCqXhZTyPWjf3wt1i-mW1_I5boLddDxLqnvfv2RDJ3JlmRHqAwLwzHqxc7w5v_Xku6ZH3Lm3z8ZFHh2DXoUMyET-OLm4sTkpY);
+    animation-delay: 6s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(https://www.1zoom.me/big2/564/332814-svetik.jpg);
+    animation-delay: 8s; 
+  }
+
+  @keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1
+    }
+    30% {
+      opacity: 0
+    }
+  }
+ 
+  /* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

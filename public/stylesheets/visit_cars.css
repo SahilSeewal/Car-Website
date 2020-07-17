@@ -1,0 +1,30 @@
+
+.thumbnail{
+float : left;
+}
+#add{
+width:1110px;
+    float:left;
+}
+span{
+float:left;
+width:950px;
+}
+
+.v{
+    color:blue;
+    font-size : 20px;
+    float:left;
+    padding-left:10px; 
+}
+.vl{
+    color:blue;
+    font-size : 20px;
+    float:left;
+    padding-left:680px; 
+}
+.vn{
+float:left;
+font-weight:500;
+font-size:25px;
+}

@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>ADD NEW VISITOR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">     
+</head>
+<body>
+<div class="container">
+<h3 align="center">ADD VISITOR</h3><br><br>
+
+<form name = "form" action = "/visitor_register" method = "post"  onsubmit="return pass_validation()">
+<div> Visitor Name <input type="text" name="visitor_name" required></div><br>
+<div> Email id <input type="email" name="username" required></div><br>
+<div>Mobile <input type="value" name="phone" required></div><br>
+<div>Password <input type="password" id = "p1" name="password" required></div><br>
+<div>Re-enter Password <input type="password" id = "p2" name="re-password" required></div><br>
+<input type="submit" value ="submit">
+</form>
+</div>
+<script>
+    function pass_validation()
+    {
+    var firstpassword=document.getElementById("p1").value;  
+    var secondpassword=document.getElementById("p2").value;  
+    
+    if(firstpassword == secondpassword){  
+    return true;  
+    }  
+    else{  
+    alert("password one and two must be same!");  
+    return false;  
+    }  
+    } 
+    </script>
+</body>
+
+</html>
